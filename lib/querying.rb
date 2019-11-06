@@ -23,7 +23,7 @@ def select_name_and_motto_of_char_with_longest_motto
   FROM characters
 
   ORDER BY characters.motto DESC
-  
+
   "
   # LIMIT 1
   # JOIN
