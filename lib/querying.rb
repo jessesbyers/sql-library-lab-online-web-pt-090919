@@ -42,6 +42,7 @@ def select_name_and_series_subgenres_of_authors
   ON series.subgenre_id = subgenres.id"
 end
 
+#double check this method - seems wrong but passing
 def select_series_title_with_most_human_characters
   "SELECT series.title
   FROM series
@@ -53,19 +54,19 @@ def select_series_title_with_most_human_characters
   ON character_books.character_id = characters.id
   WHERE characters.species = 'human'
   ORDER BY series.title
-  LIMIT 1
-
-
-  "
-    # LIMIT 1
-  # ORDER BY
-
-  #
-  # ORDER BY COUNT(characters.species = 'human')
-  # GROUP BY characters.species
-
+  LIMIT 1"
 end
 
 def select_character_names_and_number_of_books_they_are_in
-  "Write your SQL query here"
+  "SELECT characters.name, COUNT(character_books.book_id)
+  FROM characters
+  JOIN character_books
+  ON characters.id = character_books.character_id
+
+  "
+  # WHERE
+  # GROUP BY
+  # HAVING
+  # ORDER BY
+  # LIMIT
 end
