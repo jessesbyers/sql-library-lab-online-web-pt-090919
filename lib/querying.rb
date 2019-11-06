@@ -51,7 +51,6 @@ def select_series_title_with_most_human_characters
   ON books.id = character_books.book_id
   JOIN characters
   ON character_books.character_id = characters.id
-  GROUP BY characters.species
   HAVING characters.species = 'human'
 
 
@@ -61,6 +60,7 @@ def select_series_title_with_most_human_characters
 
   #
   # ORDER BY COUNT(characters.species = 'human')
+  # GROUP BY characters.species
 
 end
 
