@@ -51,10 +51,12 @@ def select_series_title_with_most_human_characters
   ON books.id = character_books.book_id
   JOIN characters
   ON character_books.character_id = characters.id
-  GROUP BY characters.species
-  HAVING COUNT(characters.species) = 'human'
+
+
   LIMIT 1
   "
+    # GROUP BY characters.species
+  # HAVING COUNT(characters.species) = 'human'
   # ORDER BY
 
 end
